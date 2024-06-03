@@ -9,9 +9,11 @@ MAKEFLAGS += --jobs
 NAME ?= $(error ERROR: Undefined variable NAME)
 VERSION ?= $(error ERROR: Undefined variable VERSION)
 WORKDIR_ROOT ?= $(error ERROR: Undefined variable WORKDIR_ROOT)
+override WORKDIR_DEPS = $(WORKDIR_ROOT)/deps
 override WORKDIR_TEST = $(WORKDIR_ROOT)/test/$(NAME)/$(VERSION)
 
 # Includes
+include make/deps.mk
 include bowerbird.mk
 include test/bowerbird-bash-builder/test-bash-build-executable.mk
 include test/bowerbird-bash-builder/test-bash-build-library.mk
