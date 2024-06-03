@@ -15,8 +15,6 @@ override WORKDIR_TEST = $(WORKDIR_ROOT)/test/$(NAME)/$(VERSION)
 # Includes
 include make/deps.mk
 include bowerbird.mk
-include test/bowerbird-bash-builder/test-bash-build-executable.mk
-include test/bowerbird-bash-builder/test-bash-build-library.mk
 
  # Targets
 .PHONY: private_clean
@@ -27,7 +25,4 @@ private_clean:
 	@echo "INFO: Cleaning complete."
 	@echo
 
-.PHONY: private_test
-private_test: \
-		test-bash-build-executable \
-		test-bash-build-library \
+$(eval $(call bowerbird::generate-test-runner,private_test,test/,test*.mk))
