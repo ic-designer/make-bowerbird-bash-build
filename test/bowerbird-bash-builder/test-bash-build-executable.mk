@@ -1,6 +1,3 @@
-# Constants
-override TEST_FILE.MK := $(lastword $(MAKEFILE_LIST))
-
 # Targets
 PHONY: test-bash-build-executable
 test-bash-build-executable: \
@@ -12,7 +9,7 @@ test-bash-build-executable: \
 PHONY: test-build-bash-executable-no-files
 test-build-bash-executable-no-files:
 	@! $(MAKE) -q $(WORKDIR_TEST)/test-build-bash-executable-no-files/executable.sh
-	@printf "\e[1;32mPassed: $(TEST_FILE.MK)::$@\e[0m\n"
+	@printf "\e[1;32mPassed: $(lastword $(MAKEFILE_LIST))::$@\e[0m\n"
 
 $(WORKDIR_TEST)/test-build-bash-executable-no-files/executable.sh:
 	$(bowerbird::build-bash-executable)
@@ -24,7 +21,7 @@ test-build-bash-executable-one-file: \
 	@test "alpha" = "$(shell $^)"
 	@test "alpha beta" = "$(shell $^ beta)"
 	@test "alpha beta gamma" = "$(shell $^ beta gamma)"
-	@printf "\e[1;32mPassed: $(TEST_FILE.MK)::$@\e[0m\n"
+	@printf "\e[1;32mPassed: $(lastword $(MAKEFILE_LIST))::$@\e[0m\n"
 
 $(WORKDIR_TEST)/test-build-bash-executable-one-file/executable.sh: \
 		$(WORKDIR_TEST)/test-build-bash-executable-one-file/alpha-src.sh
@@ -37,7 +34,7 @@ test-build-bash-executable-two-files: \
 	@test "alpha beta" = "$(shell $^)"
 	@test "alpha gamma beta gamma" = "$(shell $^ gamma)"
 	@test "alpha gamma delta beta gamma delta" = "$(shell $^ gamma delta)"
-	@printf "\e[1;32mPassed: $(TEST_FILE.MK)::$@\e[0m\n"
+	@printf "\e[1;32mPassed: $(lastword $(MAKEFILE_LIST))::$@\e[0m\n"
 
 $(WORKDIR_TEST)/test-build-bash-executable-two-files/executable.sh: \
 		$(WORKDIR_TEST)/test-build-bash-executable-one-file/alpha-src.sh \
