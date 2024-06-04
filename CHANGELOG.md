@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Migrated the bash build recipes to a separate repo.
 ### Changed
-- Test are now run using Bowerbird Test Tools
+- Test are now run using Bowerbird Test Tools.
 ### Deprecated
 ### Fixed
 ### Security
