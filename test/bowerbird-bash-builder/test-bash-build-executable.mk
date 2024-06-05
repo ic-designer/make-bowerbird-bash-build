@@ -1,9 +1,8 @@
-# Targets
 test-build-bash-executable-no-files:
 	! $(MAKE) -q $(WORKDIR_TEST)/test-build-bash-executable-no-files/executable.sh
 
 $(WORKDIR_TEST)/test-build-bash-executable-no-files/executable.sh:
-	$(bowerbird::build-bash-executable)
+	$(call bowerbird::build-bash-executable,)
 
 
 test-build-bash-executable-one-file: \
@@ -14,7 +13,7 @@ test-build-bash-executable-one-file: \
 
 $(WORKDIR_TEST)/test-build-bash-executable-one-file/executable.sh: \
 		$(WORKDIR_TEST)/test-build-bash-executable-one-file/alpha-src.sh
-	$(call bowerbird::build-bash-executable, alpha)
+	$(call bowerbird::build-bash-executable,alpha)
 
 
 test-build-bash-executable-two-files: \
