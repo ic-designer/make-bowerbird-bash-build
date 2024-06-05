@@ -2,7 +2,7 @@ define bowerbird::build-bash-executable
 	@test -n "$^" || (echo "ERROR: no input files" && exit 1)
 	@echo 'INFO: Bulding executable $@...'
 	@mkdir -p $(dir $@)
-	@echo '#!/usr/bin/env bash\n' > $@
+	@echo '#!/usr/bin/env bash' > $@
 	@cat $^ >> $@
 	@echo >> $@
 	@echo 'if [[ $${BASH_SOURCE[0]} == $${0} ]]; then' >> $@
