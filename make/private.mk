@@ -21,6 +21,7 @@ include bowerbird.mk
 .PHONY: private_clean
 private_clean:
 	@echo "INFO: Cleaning directories:"
+	@$(if $(wildcard $(WORKDIR_DEPS)), rm -rfv $(WORKDIR_DEPS))
 	@$(if $(wildcard $(WORKDIR_ROOT)), rm -rfv $(WORKDIR_ROOT))
 	@$(if $(wildcard $(WORKDIR_TEST)), rm -rfv $(WORKDIR_TEST))
 	@echo "INFO: Cleaning complete."
