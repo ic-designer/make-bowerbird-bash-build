@@ -8,7 +8,9 @@ $(WORKDIR_TEST)/test-build-bash-library-no-files/library.sh:
 test-build-bash-library-one-file: \
 		$(WORKDIR_TEST)/test-build-bash-library-one-file/library-actual.sh \
 		$(WORKDIR_TEST)/test-build-bash-library-one-file/library-expected.sh
-	diff -y $^
+	$(call bowerbird::test::compare-files,\
+			$(WORKDIR_TEST)/$@/library-actual.sh,\
+			$(WORKDIR_TEST)/$@/library-expected.sh)
 
 $(WORKDIR_TEST)/test-build-bash-library-one-file/library-actual.sh: \
 		$(WORKDIR_TEST)/test-build-bash-library-one-file/alpha-src.sh
@@ -22,7 +24,9 @@ $(WORKDIR_TEST)/test-build-bash-library-one-file/library-expected.sh:
 test-build-bash-library-two-files: \
 		$(WORKDIR_TEST)/test-build-bash-library-two-files/library-actual.sh \
 		$(WORKDIR_TEST)/test-build-bash-library-two-files/library-expected.sh
-	diff -y $^
+	$(call bowerbird::test::compare-files,\
+			$(WORKDIR_TEST)/$@/library-actual.sh,\
+			$(WORKDIR_TEST)/$@/library-expected.sh)
 
 $(WORKDIR_TEST)/test-build-bash-library-two-files/library-actual.sh: \
 		$(WORKDIR_TEST)/test-build-bash-library-two-files/alpha-src.sh \

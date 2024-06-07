@@ -15,6 +15,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 ```
 
+## [Unreleased] - YYYY-MM-DD
+
+### Added
+### Changed
+- The string comparisons in the tests are now performed using
+  `bowerbird::test:compare-strings` instead of `test`.
+- The files comparisons in the tests are now performed using
+  `bowerbird::test:compare-files` instead of `test`.
+### Deprecated
+### Fixed
+### Security
+
+
 ## [0.1.0] - 2024-06-07
 
 ### Added
