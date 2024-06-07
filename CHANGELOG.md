@@ -19,8 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
-- The comparisons between strings in the test files are now performed using
+- The string comparisons in the tests are now performed using
   `bowerbird::test:compare-strings` instead of `test`.
+- The files comparisons in the tests are now performed using
+  `bowerbird::test:compare-files` instead of `test`.
 ### Deprecated
 ### Fixed
 ### Security
