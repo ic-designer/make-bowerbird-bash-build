@@ -7,9 +7,9 @@ $(WORKDIR_TEST)/test-build-bash-executable-no-files/executable.sh:
 
 test-build-bash-executable-one-file: \
 		$(WORKDIR_TEST)/test-build-bash-executable-one-file/executable.sh
-	test "alpha" = "$(shell $^)"
-	test "alpha beta" = "$(shell $^ beta)"
-	test "alpha beta gamma" = "$(shell $^ beta gamma)"
+	$(call bowerbird::test::compare-strings,alpha,$(shell $^))
+	$(call bowerbird::test::compare-strings,alpha beta,$(shell $^ beta))
+	$(call bowerbird::test::compare-strings,alpha beta gamma,$(shell $^ beta gamma))
 
 $(WORKDIR_TEST)/test-build-bash-executable-one-file/executable.sh: \
 		$(WORKDIR_TEST)/test-build-bash-executable-one-file/alpha-src.sh
@@ -18,9 +18,11 @@ $(WORKDIR_TEST)/test-build-bash-executable-one-file/executable.sh: \
 
 test-build-bash-executable-two-files: \
 		$(WORKDIR_TEST)/test-build-bash-executable-two-files/executable.sh
-	test "alpha beta" = "$(shell $^)"
-	test "alpha gamma beta gamma" = "$(shell $^ gamma)"
-	test "alpha gamma delta beta gamma delta" = "$(shell $^ gamma delta)"
+	$(call bowerbird::test::compare-strings,alpha beta,$(shell $^))
+	$(call bowerbird::test::compare-strings,alpha gamma beta gamma,$(shell $^ gamma))
+	$(call bowerbird::test::compare-strings,\
+			alpha gamma delta beta gamma delta,\
+			$(shell $^ gamma delta))
 
 $(WORKDIR_TEST)/test-build-bash-executable-two-files/executable.sh: \
 		$(WORKDIR_TEST)/test-build-bash-executable-one-file/alpha-src.sh \
