@@ -15,12 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 ```
 
-## [Unreleased] - YYYY-MM-DD
+## [0.1.0] - 2024-06-07
 
 ### Added
 - Migrated the bash build recipes to a separate repo.
+- Created documentation for the public macros.
 ### Changed
 - Test are now run using Bowerbird Test Tools.
-### Deprecated
-### Fixed
-### Security
