@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
-- Updated the `bowerbird-deps` and `bowerbird-test` calls to the new syntax.
 ### Deprecated
 ### Fixed
 ### Security
@@ -24,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `bowerbird::test:compare-strings` instead of `test`.
 - The files comparisons in the tests are now performed using
   `bowerbird::test:compare-files` instead of `test`.
+- Updated the `bowerbird-deps` and `bowerbird-test` calls to the new syntax.
 ### Deprecated
 ### Fixed
 ### Security
