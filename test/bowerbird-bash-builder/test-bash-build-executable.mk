@@ -31,5 +31,5 @@ $(WORKDIR_TEST)/test-build-bash-executable-two-files/executable.sh: \
 
 
 $(WORKDIR_TEST)/%-src.sh: $(MAKEFILE_LIST)
-	mkdir -p $(dir $)
+	mkdir -p $(dir $@)
 	echo 'function $(notdir $*) () { echo $(notdir $*) $$@; }' > $@
